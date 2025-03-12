@@ -1,0 +1,18 @@
+{
+    "757a9db5-c5ec-43e6-b9a6-fe9fe25c60f2": {
+        "title": "Shadow Quest",
+        "category": "RPG",
+        "maxLevel": "50",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMIoCS_w3F8yzKTfLrYRL7R4t4UEUovyqq1A&s",
+        "summary": "A hero embarks on a journey to defeat the Dark Lord, exploring dungeons, battling monsters, and unlocking powerful abilities.",
+        "_id": "757a9db5-c5ec-43e6-b9a6-fe9fe25c60f2"
+    },
+    "a37801bc-8543-4c5e-8201-af8939502071": {
+        "title": "Counter Strike 1.6",
+        "category": "FPS",
+        "maxLevel": "90",
+        "imageUrl": "https://play-cs.com/img/seo/og_image1.jpg",
+        "summary": "Play the world's number 1 online action game. Engage in an incredibly realistic brand of terrorist warfare in this wildly popular team-based game.",
+        "_id": "a37801bc-8543-4c5e-8201-af8939502071"
+    }
+}
