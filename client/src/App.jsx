@@ -10,8 +10,14 @@ import GameDetails from './components/game-details/GameDetails';
 import GameEdit from './components/game-edit/GameEdit';
 
 import './App.css'
+import { useState } from 'react';
 
 function App() {
+    const [email, setEmail] = useState();
+
+    const userLoginHandler = (email) => {
+        setEmail(email);
+    }
 
     return (
         <div id="box">
@@ -20,7 +26,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/games' element={<GameCatalog />} />
-                    <Route path='/login' element={<Login />} />
+                    <Route path='/login' element={<Login onLogin={userLoginHandler} />} />
                     <Route path='/register' element={<Register />} />
                     <Route path='/games/create' element={<GameCreate />} />
                     <Route path='/games/:gameId/edit' element={<GameEdit />} />
