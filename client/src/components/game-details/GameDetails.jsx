@@ -1,17 +1,14 @@
-import { useContext, useEffect, useState } from "react";
 import { Link, Navigate, useNavigate, useParams } from "react-router"
-import gameService from "../../services/gameService";
-import { UserContext } from "../../contexts/UserContext";
-import { useGame } from "../../api/gameApi";
+import { useDeleteGame, useGame } from "../../api/gameApi";
+import useAuth from "../../hooks/useAuth";
 
 
 export default function GameDetails() {
     const navigate = useNavigate();
-    const {email} = useContext(UserContext)
+    const { email } = useAuth()
     const { gameId } = useParams();
-    // const [game, setGame] = useState({});
     const { game } = useGame(gameId);
-
+    const { deleteGame } = useDeleteGame
     
 
     const gameDeleteClickHandler = async () => {
@@ -21,7 +18,7 @@ export default function GameDetails() {
             return;
         }
 
-        await gameService.delete(gameId);
+        await deleteGame(gameId);
 
         navigate('/games');
     };
