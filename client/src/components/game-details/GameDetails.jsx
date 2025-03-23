@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, Navigate, useNavigate, useParams } from "react-router"
 import gameService from "../../services/gameService";
+import { UserContext } from "../../contexts/UserContext";
 
 
 export default function GameDetails() {
     const navigate = useNavigate();
+    const {email} = useContext(UserContext)
     const [game, setGame] = useState({});
     const { gameId } = useParams();
 
