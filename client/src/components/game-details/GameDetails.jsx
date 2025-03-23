@@ -2,20 +2,17 @@ import { useContext, useEffect, useState } from "react";
 import { Link, Navigate, useNavigate, useParams } from "react-router"
 import gameService from "../../services/gameService";
 import { UserContext } from "../../contexts/UserContext";
+import { useGame } from "../../api/gameApi";
 
 
 export default function GameDetails() {
     const navigate = useNavigate();
     const {email} = useContext(UserContext)
-    const [game, setGame] = useState({});
     const { gameId } = useParams();
+    // const [game, setGame] = useState({});
+    const { game } = useGame(gameId);
 
-    useEffect(() => {
-        gameService.getOne(gameId)
-            .then(result => {
-                setGame(result);
-            })
-    }, [gameId])
+    
 
     const gameDeleteClickHandler = async () => {
         const hasConfirm = confirm(`You are about to delete ${game.title} game, do you proceed?`);
