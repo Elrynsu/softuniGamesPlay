@@ -13,6 +13,7 @@ import GameDetails from './components/game-details/GameDetails';
 import GameEdit from './components/game-edit/GameEdit';
 
 import './App.css'
+import Logout from './components/logout/Logout';
 
 function App() {
     const [authData, setAuthData] = useState({});
@@ -31,6 +32,7 @@ function App() {
                     <Route path='/games' element={<GameCatalog />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<Register />} />
+                    <Route path='/logout' element={<Logout />} />
                     <Route path='/games/create' element={<GameCreate />} />
                     <Route path='/games/:gameId/edit' element={<GameEdit />} />
                     <Route path='/games/:gameId/details' element={<GameDetails />} />
