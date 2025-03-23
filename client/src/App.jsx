@@ -13,12 +13,10 @@ import './App.css'
 import { useState } from 'react';
 
 function App() {
-    const [email, setEmail] = useState();
+    const [authData, setAuthData] = useState({});
 
-    const userLoginHandler = (authData) => {
-        console.log(authData)
-        
-        setEmail(authData.email);
+    const userLoginHandler = (resultData) => {
+        setAuthData(resultData);
     }
 
     return (
@@ -32,7 +30,7 @@ function App() {
                     <Route path='/register' element={<Register />} />
                     <Route path='/games/create' element={<GameCreate />} />
                     <Route path='/games/:gameId/edit' element={<GameEdit />} />
-                    <Route path='/games/:gameId/details' element={<GameDetails />} />
+                    <Route path='/games/:gameId/details' element={<GameDetails email={authData.email} />} />
                 </Routes>
             </main>
         </div>
