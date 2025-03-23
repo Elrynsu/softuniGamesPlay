@@ -11,9 +11,9 @@ import GameCreate from './components/game-create/GameCreate';
 import GameCatalog from './components/game-catalog/gameCatalog';
 import GameDetails from './components/game-details/GameDetails';
 import GameEdit from './components/game-edit/GameEdit';
+import Logout from './components/logout/Logout';
 
 import './App.css'
-import Logout from './components/logout/Logout';
 
 function App() {
     const [authData, setAuthData] = useState({});
@@ -22,8 +22,12 @@ function App() {
         setAuthData(resultData);
     }
 
+    const userLogoutHandler = () => {
+        setAuthData({});
+    }
+
     return (
-        <UserContext.Provider value={{...authData, userLoginHandler}}>
+        <UserContext.Provider value={{...authData, userLoginHandler, userLogoutHandler}}>
         <div id="box">
             <Header />
             <main id="main-content">
